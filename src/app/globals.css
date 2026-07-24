@@ -1,54 +1,189 @@
 @import "tailwindcss";
 
 :root {
-
-  --background: #fffefc;
-  --foreground: #1c1513;
-
+  color-scheme: light dark;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+[data-theme="light"] {
+  --color-background-default: #FFFEFC;
+  --color-background-subtle: #F8F3EC;
+  --color-background-muted: #FAF7F2;
+  --color-background-inverse: #1C1513;
+  --color-surface-default: #FFFFFF;
+  --color-surface-card: #FAF7F2;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-hover: #F4EEE5;
+  --color-surface-pressed: #E9DECF;
+  --color-surface-disabled: #F6F5F3;
+  --color-text-primary: #1C1513;
+  --color-text-secondary: #59453C;
+  --color-text-tertiary: #8E7363;
+  --color-text-disabled: #968B80;
+  --color-text-inverse: #FFFFFF;
+  --color-text-link: #B65A38;
+  --color-border-default: #ECEAE7;
+  --color-border-subtle: #F2EBE0;
+  --color-border-strong: #BBB3AA;
+  --color-border-focus: #C96A47;
+  --color-border-error: #D14B4B;
+  --color-brand-primary: #B65A38;
+  --color-brand-secondary: #EA7B28;
+  --color-brand-hover: #94472C;
+  --color-brand-active: #733521;
+  --color-brand-soft: #FAECE8;
+  --color-feedback-success: #3FAE6B;
+  --color-feedback-warning: #D89B22;
+  --color-feedback-error: #D14B4B;
+  --color-feedback-info: #4B84D1;
+  --color-button-primary-background: #B65A38;
+  --color-button-primary-hover: #94472C;
+  --color-button-primary-active: #733521;
+  --color-button-primary-text: #FFFFFF;
+  --color-button-primary-disabled: #DDD8D2;
+  --color-button-secondary-background: #F4EEE5;
+  --color-button-secondary-hover: #E9DECF;
+  --color-button-secondary-active: #D8C5AF;
+  --color-button-secondary-text: #1C1513;
+  --color-button-ghost-hover: #F8F3EC;
+  --color-button-ghost-active: #F2EBE0;
+  --color-button-ghost-text: #1C1513;
+  --color-input-background: #FFFFFF;
+  --color-input-border: #ECEAE7;
+  --color-input-hover: #DDD8D2;
+  --color-input-focus: #C96A47;
+  --color-input-placeholder: #968B80;
+  --color-input-text: #1C1513;
+  --color-sidebar-background: #FAF7F2;
+  --color-sidebar-border: #E9DECF;
+  --color-sidebar-item: #5B4943;
+  --color-sidebar-itemHover: #FAECE8;
+  --color-sidebar-itemActive: #B65A38;
+  --color-sidebar-itemActiveBackground: #FDF7F5;
+  --color-header-background: #FFFFFF;
+  --color-header-border: #F2EBE0;
+  --color-card-background: #FFFFFF;
+  --color-card-border: #F2EBE0;
+  --color-card-hover: #FAF7F2;
+  --color-badge-neutral: #E9DECF;
+  --color-badge-primary: #FAECE8;
+  --color-badge-success: #EAF8EF;
+  --color-badge-warning: #FFF6E5;
+  --color-badge-error: #FCEAEA;
+  --color-progress-background: #F4EEE5;
+  --color-progress-fill: #B65A38;
+  --color-chat-userBubble: #B65A38;
+  --color-chat-userText: #FFFFFF;
+  --color-chat-assistantBubble: #F8F3EC;
+  --color-chat-assistantText: #1C1513;
+  --color-overlay-default: rgba(28,21,19,.40);
+  --color-overlay-strong: rgba(28,21,13,.60);
+  --color-focus-ring: #DD8C70;
 }
 
-html{
-
-    font-size:16px;
-
+[data-theme="dark"] {
+  --color-background-default: #1C1513;
+  --color-background-subtle: #302522;
+  --color-background-muted: #453732;
+  --color-background-inverse: #FFFFFF;
+  --color-surface-default: #302522;
+  --color-surface-card: #453732;
+  --color-surface-elevated: #5B4943;
+  --color-surface-hover: #453732;
+  --color-surface-pressed: #5B4943;
+  --color-surface-disabled: #403A35;
+  --color-text-primary: #FFFEFC;
+  --color-text-secondary: #F8F3EC;
+  --color-text-tertiary: #E9DECF;
+  --color-text-disabled: #968B80;
+  --color-text-inverse: #1C1513;
+  --color-text-link: #DD8C70;
+  --color-border-default: #5A514A;
+  --color-border-subtle: #5B4943;
+  --color-border-strong: #756A61;
+  --color-border-focus: #C96A47;
+  --color-border-error: #D14B4B;
+  --color-brand-primary: #C96A47;
+  --color-brand-secondary: #F29A53;
+  --color-brand-hover: #DD8C70;
+  --color-brand-active: #EAB4A2;
+  --color-brand-soft: #522417;
+  --color-feedback-success: #3FAE6B;
+  --color-feedback-warning: #D89B22;
+  --color-feedback-error: #D14B4B;
+  --color-feedback-info: #4B84D1;
+  --color-button-primary-background: #C96A47;
+  --color-button-primary-hover: #DD8C70;
+  --color-button-primary-active: #EAB4A2;
+  --color-button-primary-text: #FFFFFF;
+  --color-button-primary-disabled: #756A61;
+  --color-button-secondary-background: #453732;
+  --color-button-secondary-hover: #5B4943;
+  --color-button-secondary-active: #725E55;
+  --color-button-secondary-text: #FFFEFC;
+  --color-button-ghost-hover: #453732;
+  --color-button-ghost-active: #5B4943;
+  --color-button-ghost-text: #FFFEFC;
+  --color-input-background: #302522;
+  --color-input-border: #756A61;
+  --color-input-hover: #95837B;
+  --color-input-focus: #C96A47;
+  --color-input-placeholder: #BBB3AA;
+  --color-input-text: #FFFEFC;
+  --color-sidebar-background: #1C1513;
+  --color-sidebar-border: #302522;
+  --color-sidebar-item: #F8F3EC;
+  --color-sidebar-itemHover: #522417;
+  --color-sidebar-itemActive: #C96A47;
+  --color-sidebar-itemActiveBackground: #522417;
+  --color-header-background: #1C1513;
+  --color-header-border: #302522;
+  --color-card-background: #302522;
+  --color-card-border: #5B4943;
+  --color-card-hover: #453732;
+  --color-badge-neutral: #453732;
+  --color-badge-primary: #522417;
+  --color-badge-success: #1A3D2A;
+  --color-badge-warning: #3D3020;
+  --color-badge-error: #3D2020;
+  --color-progress-background: #453732;
+  --color-progress-fill: #C96A47;
+  --color-chat-userBubble: #B65A38;
+  --color-chat-userText: #FFFFFF;
+  --color-chat-assistantBubble: #453732;
+  --color-chat-assistantText: #FFFEFC;
+  --color-overlay-default: rgba(0,0,0,.50);
+  --color-overlay-strong: rgba(0,0,0,.70);
+  --color-focus-ring: #C96A47;
 }
 
-body{
-
-    background:var(--background);
-
-    color:var(--foreground);
-
-    font-family:Inter,sans-serif;
-
-    text-rendering:optimizeLegibility;
-
-    -webkit-font-smoothing:antialiased;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-button{
-
-    font:inherit;
-
+html {
+  font-size: 16px;
 }
 
-input{
-
-    font:inherit;
-
+body {
+  background: var(--color-background-default);
+  color: var(--color-text-primary);
+  font-family: Inter, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-a{
+button {
+  font: inherit;
+}
 
-    color:inherit;
+input {
+  font: inherit;
+}
 
-    text-decoration:none;
-
+a {
+  color: inherit;
+  text-decoration: none;
 }

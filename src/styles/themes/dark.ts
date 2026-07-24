@@ -1,16 +1,16 @@
-import { lightTheme } from "./light";
+import { semanticColorsDark } from "@/styles/tokens/semantic/colors.dark";
+import { typography } from "@/styles/tokens/foundation/typography";
+import { spacing } from "@/styles/tokens/foundation/spacing";
+import { radius } from "@/styles/tokens/foundation/radius";
+import { shadows } from "@/styles/tokens/foundation/shadows";
 
 export const darkTheme = {
-  ...lightTheme,
-
   name: "dark",
-
-  /**
-   * Futuramente serão substituídos
-   * pelos Semantic Tokens do Dark Theme.
-   */
-
-  colors: lightTheme.colors,
+  colors: semanticColorsDark,
+  typography,
+  spacing,
+  radius,
+  shadows,
 } as const;
 
 export type DarkTheme = typeof darkTheme;
