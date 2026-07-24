@@ -400,3 +400,4 @@ Define padrões de implementação.
 Considerações Finais
 A arquitetura de API da plataforma foi desenhada para aproveitar a produtividade do Supabase no MVP, mantendo uma estrutura organizada que permite evolução futura.
 O uso de serviços, hooks e uma camada de acesso aos dados mantém o frontend desacoplado do backend, permitindo adicionar novas integrações ou regras de negócio sem grandes alterações estruturais.
+
