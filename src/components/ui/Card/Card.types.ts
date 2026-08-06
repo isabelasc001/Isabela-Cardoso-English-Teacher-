@@ -1,3 +1,5 @@
+export type CardPadding = 'compact' | 'normal' | 'relaxed' | 'none'
+
 export interface CardProps {
   header?: React.ReactNode
   footer?: React.ReactNode
@@ -6,4 +8,5 @@ export interface CardProps {
   onClick?: () => void
   children: React.ReactNode
   className?: string
+  padding?: CardPadding
 }

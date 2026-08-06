@@ -1,5 +1,5 @@
-import { ComponentPlayground } from "@/components/ComponentPlayground";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <ComponentPlayground />;
+  redirect("/login");
 }

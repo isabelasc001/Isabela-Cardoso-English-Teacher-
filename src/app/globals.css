@@ -2,11 +2,29 @@
 
 :root {
   color-scheme: light dark;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-14: 56px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
   --radius-xs: 4px;
   --radius-sm: 8px;
+  --radius-auth-control: 10px;
   --radius-md: 12px;
   --radius-lg: 16px;
+  --radius-xxl: 24px;
   --shadows-level1: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-auth-card: 0 18px 42px rgba(28, 21, 19, 0.10);
+  --shadow-auth-action: 0 6px 14px rgba(182, 90, 56, 0.22);
+  --shadow-auth-badge: 0 6px 16px rgba(182, 90, 56, 0.14);
 }
 
 [data-theme="light"] {
@@ -83,6 +101,13 @@
   --color-overlay-default: rgba(28,21,19,.40);
   --color-overlay-strong: rgba(28,21,13,.60);
   --color-focus-ring: #DD8C70;
+  --color-auth-off-white: #FFFEFC;
+  --color-auth-panel-start: #B65A38;
+  --color-auth-panel-end: #94472C;
+  --color-auth-row-selected: #FFF8F4;
+  --color-auth-row-selected-border: #F7E5DC;
+  --color-auth-badge: #F7E5DC;
+  --color-auth-badge-border: #E9DECF;
 }
 
 [data-theme="dark"] {
@@ -159,6 +184,13 @@
   --color-overlay-default: rgba(0,0,0,.50);
   --color-overlay-strong: rgba(0,0,0,.70);
   --color-focus-ring: #C96A47;
+  --color-auth-off-white: #FFFEFC;
+  --color-auth-panel-start: #B65A38;
+  --color-auth-panel-end: #94472C;
+  --color-auth-row-selected: #453732;
+  --color-auth-row-selected-border: #5B4943;
+  --color-auth-badge: #522417;
+  --color-auth-badge-border: #5B4943;
 }
 
 * {
@@ -175,9 +207,21 @@ html {
 body {
   background: var(--color-background-default);
   color: var(--color-text-primary);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-inter), Inter, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-playfair), "Playfair Display", serif;
+}
+
+.auth-brand-panel {
+  background: linear-gradient(
+    135deg,
+    var(--color-auth-panel-start) 0%,
+    var(--color-auth-panel-end) 100%
+  );
 }
 
 button {

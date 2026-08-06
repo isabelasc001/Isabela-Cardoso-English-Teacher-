@@ -6,4 +6,6 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
   error?: string
   inputSize?: InputSize
   fullWidth?: boolean
+  startAdornment?: React.ReactNode
+  endAdornment?: React.ReactNode
 }

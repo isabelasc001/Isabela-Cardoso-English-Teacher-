@@ -1,5 +1,20 @@
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { Inter, Playfair_Display } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+  weight: ["600", "700"],
+});
 
 const themeScript = `
 (function() {
@@ -18,7 +33,11 @@ const themeScript = `
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html
+      lang="pt-BR"
+      className={`${inter.variable} ${playfairDisplay.variable}`}
+      suppressHydrationWarning
+    >
       <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
       <body><ThemeProvider>{children}</ThemeProvider></body>
     </html>

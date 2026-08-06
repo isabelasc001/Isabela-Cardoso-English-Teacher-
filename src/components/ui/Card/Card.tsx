@@ -1,5 +1,12 @@
 import { cn } from '@/lib/utils/cn'
-import type { CardProps } from './Card.types'
+import type { CardProps, CardPadding } from './Card.types'
+
+const paddingStyles: Record<CardPadding, string> = {
+  compact: 'p-[var(--spacing-3)]',
+  normal: 'p-[var(--spacing-4)]',
+  relaxed: 'p-[var(--spacing-6)]',
+  none: 'p-0',
+}
 
 export function Card({
   header,
@@ -7,6 +14,7 @@ export function Card({
   hoverable = false,
   clickable = false,
   onClick,
+  padding = 'normal',
   children,
   className,
 }: CardProps) {
@@ -25,13 +33,13 @@ export function Card({
       )}
     >
       {header && (
-        <div className="px-4 py-3 border-b border-[var(--color-card-border)]">
+        <div className="px-[var(--spacing-4)] py-[var(--spacing-3)] border-b border-[var(--color-card-border)]">
           {header}
         </div>
       )}
-      <div className="p-4">{children}</div>
+      <div className={paddingStyles[padding]}>{children}</div>
       {footer && (
-        <div className="px-4 py-3 border-t border-[var(--color-card-border)] bg-[var(--color-background-subtle)]">
+        <div className="px-[var(--spacing-4)] py-[var(--spacing-3)] border-t border-[var(--color-card-border)] bg-[var(--color-background-subtle)]">
           {footer}
         </div>
       )}
