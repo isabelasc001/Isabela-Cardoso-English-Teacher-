@@ -11,7 +11,11 @@
  *
  */
 
+const offWhite = "#FFFEFC" as const;
+
 export const brandColors = {
+  offWhite,
+
   terracotta: {
     50: "#FDF7F5",
     100: "#FAECE8",
@@ -66,7 +70,7 @@ export const brandColors = {
 
   ivory: {
     50: "#FFFFFF",
-    100: "#FFFEFC",
+    100: offWhite,
     200: "#FCFAF6",
     300: "#F8F3EC",
     400: "#F2EBE0",

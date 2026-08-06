@@ -142,6 +142,15 @@ export const semanticColors = {
   focus: {
     ring: brandColors.terracotta[400],
   },
+
+  auth: {
+    offWhite: brandColors.offWhite,
+    panelStart: brandColors.terracotta[600],
+    panelEnd: brandColors.terracotta[700],
+    rowSelectedBackground: "#FFF8F4",
+    rowSelectedBorder: "#F7E5DC",
+    badgeBackground: "#F7E5DC",
+  },
 } as const;
 
 export type SemanticColors = typeof semanticColors;

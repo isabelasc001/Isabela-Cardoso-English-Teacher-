@@ -30,17 +30,17 @@ export function ErrorState({
   return (
     <div
       className={cn(
-        'flex flex-col items-center justify-center text-center p-8',
+        'flex flex-col items-center justify-center text-center p-[var(--spacing-6)]',
         className
       )}
     >
-      <div className="mb-4">
+      <div className="mb-[var(--spacing-4)]">
         <ErrorIcon />
       </div>
-      <h3 className="text-lg font-semibold text-[var(--color-text-primary)] mb-2">
+      <h3 className="text-lg font-semibold text-[var(--color-text-primary)] mb-[var(--spacing-2)]">
         {title}
       </h3>
-      <p className="text-sm text-[var(--color-text-secondary)] mb-4 max-w-md">
+      <p className="text-sm text-[var(--color-text-secondary)] mb-[var(--spacing-4)] max-w-md">
         {message}
       </p>
       {onRetry && (

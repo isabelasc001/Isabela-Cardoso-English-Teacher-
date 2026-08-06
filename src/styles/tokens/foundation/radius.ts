@@ -3,6 +3,8 @@ export const radius = {
 
   sm: "8px",
 
+  control: "10px",
+
   md: "12px",
 
   lg: "16px",

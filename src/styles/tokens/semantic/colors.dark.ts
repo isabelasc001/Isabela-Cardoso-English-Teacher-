@@ -130,6 +130,15 @@ export const semanticColorsDark = {
   focus: {
     ring: brandColors.terracotta[500],
   },
+
+  auth: {
+    offWhite: brandColors.offWhite,
+    panelStart: brandColors.terracotta[600],
+    panelEnd: brandColors.terracotta[700],
+    rowSelectedBackground: brandColors.espresso[700],
+    rowSelectedBorder: brandColors.espresso[600],
+    badgeBackground: brandColors.terracotta[900],
+  },
 } as const;
 
 export type SemanticColorsDark = typeof semanticColorsDark;

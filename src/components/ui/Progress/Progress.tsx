@@ -20,7 +20,7 @@ export function Progress({
   return (
     <div className={cn('w-full', className)}>
       {(label || showValue) && (
-        <div className="flex items-center justify-between mb-1.5">
+        <div className="flex items-center justify-between mb-[var(--spacing-2)]">
           {label && (
             <span className="text-sm font-medium text-[var(--color-text-primary)]">
               {label}

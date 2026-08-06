@@ -10,8 +10,8 @@ const variantStyles: Record<BadgeVariant, string> = {
 }
 
 const sizeStyles: Record<BadgeSize, string> = {
-  sm: 'px-2 py-0.5 text-xs',
-  md: 'px-2.5 py-1 text-sm',
+  sm: 'px-[var(--spacing-2)] py-[var(--spacing-1)] text-xs',
+  md: 'px-[var(--spacing-3)] py-[var(--spacing-2)] text-sm',
 }
 
 export function Badge({ 

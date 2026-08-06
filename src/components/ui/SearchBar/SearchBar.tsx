@@ -62,7 +62,7 @@ export function SearchBar({
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
         className={cn(
-          'w-full pl-10 pr-10 py-2 rounded-[var(--radius-sm)]',
+          'w-full pl-10 pr-10 py-[var(--spacing-2)] rounded-[var(--radius-sm)]',
           'bg-[var(--color-input-background)] border border-[var(--color-input-border)]',
           'text-[var(--color-input-text)] placeholder:text-[var(--color-input-placeholder)]',
           'hover:border-[var(--color-input-hover)]',

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, useCallback } from "react";
+import { createContext, startTransition, useCallback, useContext, useEffect, useState } from "react";
 import { lightTheme } from "@/styles/themes/light";
 import { darkTheme } from "@/styles/themes/dark";
 
@@ -42,12 +42,11 @@ function resolveTheme(theme: Theme): ResolvedTheme {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("system");
   const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>("light");
-  const [mounted, setMounted] = useState(false);
 
   const applyTheme = useCallback((resolved: ResolvedTheme) => {
     const root = document.documentElement;
     root.setAttribute("data-theme", resolved);
-    setResolvedTheme(resolved);
+    startTransition(() => setResolvedTheme(resolved));
   }, []);
 
   const setTheme = useCallback((newTheme: Theme) => {
@@ -72,7 +71,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
     
     if (stored && ["light", "dark", "system"].includes(stored)) {
-      setThemeState(stored);
+      startTransition(() => setThemeState(stored));
       applyTheme(resolveTheme(stored));
     } else {
       const systemTheme = getSystemTheme();
@@ -92,8 +91,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         }
       })
       .catch(() => {});
-
-    setMounted(true);
   }, [applyTheme]);
 
   useEffect(() => {
